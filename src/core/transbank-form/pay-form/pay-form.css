@@ -1,0 +1,54 @@
+.App {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.vertical-center {
+  width: 20%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.buy__order-container{
+  display: flex; justify-content: flex-end
+}
+
+.ant-form-item {
+  margin-bottom: 15px;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.btn-continer {
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .vertical-center {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .vertical-center {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .vertical-center {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .vertical-center {
+    width: 70%;
+  }
+}
