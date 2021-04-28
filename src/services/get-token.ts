@@ -1,6 +1,6 @@
 const returnUrl = 'http://www.comercio.cl/webpay/retorno';
 const sessionId = 'sesion1234557545';
-const URL = 'https://webpay3gint.transbank.cl/rswebpaytransaction/api/webpay/v1.0/transactions';
+const REMOTE_URL = 'https://transbank-backend.herokuapp.com';
 
 interface RedirectPage {
   token_ws: string;
@@ -17,7 +17,6 @@ interface Response {
 
 export function redirectPage({ token_ws, url }: RedirectPage) {
   const t = { token_ws };
-  console.log('t: ', t);
 
   return fetch(url, {
     method: 'POST',
@@ -27,9 +26,8 @@ export function redirectPage({ token_ws, url }: RedirectPage) {
 
 export function initTransaction(options: InitTransaction): Promise<Response> {
   const t = { ...options, returnUrl, sessionId };
-  console.log('t: ', t);
 
-  return fetch('http://localhost:3000/webpay_plus/create', {
+  return fetch(`${REMOTE_URL}/webpay_plus/create`, {
     method: 'POST',
     body: JSON.stringify(t),
     headers: {
